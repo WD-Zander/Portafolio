@@ -6,15 +6,7 @@
 }
 
 .nav {
-  display: flex;
- 
-  background-color: #0d1116;
-
-  background-size: cover;
-  justify-content: right;
-  height: 50px;
-  margin: 0 auto;
-
+display: flex;
 
 
 
@@ -50,6 +42,7 @@
 .section__about {
   background-color: black;
   display: flex;
+  flex-direction: ;
   justify-content: center;
   height: 100vh;
 
@@ -81,4 +74,19 @@
 .section__social {
   display: flex;
   gap: 5px;
+}
+
+
+.nav__container {
+  position: fixed;
+  width: 100%;
+  padding: 7 px 12 px 7px 12px;
+  /*background-color: #0d1116;*/
+  background-color: red;
+  display: flex;
+  justify-content: right;
+  height: 40px;
+  
+
+  
 }
