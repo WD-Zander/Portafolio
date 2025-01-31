@@ -1,0 +1,12 @@
+.skills__social{
+    display: flex;
+    flex-direction: row;
+  
+  
+  }
+  
+  .skill__image{
+  
+    width: 100px;
+  
+  }

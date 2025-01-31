@@ -1,69 +1,81 @@
-.card__container{
-  display: flex;
-  flex-wrap: wrap;
- justify-content: center;
-  gap: 20px;
-  max-width: 1550px;
-  width: 100%;
-
+/* Contenedor principal que usa grid para organizar las tarjetas */
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea columnas adaptativas */
+  gap: 15px; /* Espacio entre las tarjetas */
+  justify-items: center; /* Centra las tarjetas horizontalmente */
 }
 
-.template__card{
-  margin: auto;
- 
+/* Clase para la plantilla de la tarjeta */
+.template__card {
+  margin: auto; /* Centra la plantilla */
 }
-  
 
+/* Estilo general de las tarjetas */
+.card {
+  border-radius: 10px; /* Bordes redondeados */
+  width: 100%; /* Ancho completo dentro del contenedor */
+  max-width: 350px; /* Ancho máximo de 350px */
+  box-shadow: 0 4px 8px rgb(247, 247, 247); /* Sombra de la tarjeta */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  margin: 0; /* Sin margen extra */
+  transition: transform 0.3s ease; /* Transición suave para transformaciones */
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.card:hover {
+  transform: translateY(-10px); /* Mueve la tarjeta hacia arriba 10px */
+}
+
+/* Imagen dentro de la tarjeta */
+.card-img {
+  width: 100%; /* Ancho completo de la imagen */
+  height: 200px; /* Altura fija de 200px */
+  object-fit: cover; /* La imagen se ajusta al tamaño del contenedor sin distorsionarse */
+}
+
+/* Contenido de texto de la tarjeta */
+.card-content {
+  padding: 20px; /* Espacio interior alrededor del contenido */
+  text-align: justify; /* Justifica el texto */
+  font-family: Lato, sans-serif; /* Fuente del texto */
+  font-size: 1em; /* Tamaño de la fuente */
+}
+
+/* Título de la tarjeta */
+.card-title {
+  font-size: 1.5rem; /* Tamaño de la fuente del título */
+  color: black; /* Color del texto del título */
+  margin-bottom: 10px; /* Espacio debajo del título */
+  font-family: Lato, sans-serif; /* Fuente del título */
+}
+
+/* Descripción de la tarjeta */
+.card-description {
+  font-size: 1rem; /* Tamaño de la fuente de la descripción */
+  color: black; /* Color del texto de la descripción */
+  margin-bottom: 20px; /* Espacio debajo de la descripción */
+  font-family: Lato, sans-serif; /* Fuente de la descripción */
+}
+
+/* Media query para pantallas menores a 740px */
+@media screen and (max-width: 740px) {
   .card {
+    width: 100%; /* Ancho completo dentro del contenedor */
+    max-width: 300px; /* Ancho máximo de 300px */
+  }
+  .card__container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea columnas adaptativas con tarjetas de tamaño mínimo de 300px */
+  }
+}
 
-    border-radius: 10px;
-    width: 350px;
-    box-shadow: 0 4px 8px rgb(247, 247, 247);
-    overflow: hidden;
-    margin: 0;
-    transition: transform 0.3s ease;
-   }
-    
-  
-  
-  
-  .card:hover {
-    transform: translateY(-10px);
+/* Media query para pantallas menores a 630px */
+@media screen and (max-width: 630px) {
+  .card {
+    width: 100%; /* Ancho completo dentro del contenedor */
+    max-width: 400px; /* Ancho máximo de 400px */
   }
-  
-  /* Imagen de la card */
-  .card-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  .card__container {
+    grid-template-columns: 1fr; /* Una sola columna */
   }
-  
-  /* Contenido de la card */
-  .card-content {
-    padding: 20px;
-    text-align: justify;
-    font-family: Lato, sans-serif;
-    font-size: 1em;
-
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    color: black;
-    margin-bottom: 10px;
-    font-family: Lato, sans-serif;
-  }
-  
-  .card-description {
-    font-size: 1rem;
-    color: black;
-    margin-bottom: 20px;
-    font-family: Lato, sans-serif;
-  }
-  
-
-  
-  .card-link:hover {
-    background-color: #0056b3;
-  }
-  
+}
